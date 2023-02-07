@@ -101,7 +101,7 @@ header img {
 }
 
 .banner-text h2 {
-  font-size: clamp(1.5rem, 4vw, 2.6rem);
+  font-size: clamp(1.7rem, 4vw, 3.2rem);
   margin-bottom: 0.6rem;
   font-weight: 300;
   color: var(--gray);
@@ -129,7 +129,7 @@ header img {
 
 .form-control,
 .btn {
-  padding: 0.8rem 1.4rem;
+  padding: 1.3rem 1.4rem;
   transition: all 0.2s ease;
 }
 
