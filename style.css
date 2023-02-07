@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+
+:root {
+  --blue: hsl(223, 87%, 63%);
+  --pale-blue: hsl(223, 100%, 88%);
+  --darker-blue: hsl(209, 33%, 12%);
+  --error: hwb(354 32% 0%);
+  --success: hsl(120, 74%, 52%);
+  --gray: hsl(0, 0%, 59%);
+  --faded: hsl(0, 0%, 85%);
+  --border-r: 1.2rem;
+  --hover: hsl(224, 87%, 70%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+a {
+  font-family: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  padding: 1rem;
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-width: 600px;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.highlight {
+  color: var(--darker-blue);
+  font-weight: 700;
+}
+
+header {
+  margin-top: 1.5rem;
+  margin-bottom: 1.3rem;
+}
+
+header img {
+  margin: 1rem auto 2rem auto;
+}
+
+.banner-text {
+  margin-bottom: 1.8rem;
+}
+
+.banner-text h2,
+.banner-text p {
+  text-align: center;
+}
+
+.banner-text h2 {
+  font-size: clamp(1.5rem, 4vw, 2.6rem);
+  margin-bottom: 0.6rem;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.banner-text p {
+  color: var(--darker-blue);
+}
+
+#subscription-form {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* input */
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-control,
+.btn {
+  padding: 0.8rem 1.4rem;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.btn:focus {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.form-control {
+  width: 100%;
+  border-radius: var(--border-r);
+  border: 1px solid var(--faded);
+  outline: none;
+  color: var(--darker-blue);
+}
+
+.form-control:focus {
+  border-color: var(--blue);
+}
+
+.form-control.error {
+  border-color: var(--error);
+  outline-color: var(--error);
+}
+
+.form-control.valid {
+  border-color: var(--success);
+  outline-color: var(--success);
+}
+
+span.error {
+  margin-top: 0.3rem;
+  font-weight: 300;
+  align-self: center;
+  font-family: inherit;
+  color: var(--error);
+  font-size: clamp(0.7rem, 2.5vw, 0.8rem);
+  text-align: center;
+  width: 100%;
+}
+
+/* button */
+
+.btn {
+  width: 100%;
+  font-weight: 600;
+  display: block;
+  border-radius: var(--border-r);
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--blue);
+  width: 100%;
+  box-shadow: 0 9px 12px hsla(223, 87%, 63%, 0.4);
+}
+
+.btn:hover {
+  background-color: var(--hover);
+}
+
+/* images */
+#dashboard {
+  margin: 6rem 0;
+}
+
+/* footer */
+footer {
+  margin: 1rem 0;
+  font-size: 0.8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem 0;
+}
+
+footer p {
+  color: var(--gray);
+}
+
+.social-links {
+  padding: 0.5rem 0;
+  display: flex;
+  color: var(--blue);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.social-link {
+  cursor: pointer;
+  height: 1.7rem;
+  width: 1.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+  outline: 1px solid var(--blue);
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  color: white;
+  box-shadow: 0 0 10px var(--hover);
+  background-color: var(--blue);
+}
+
+.social-link:focus {
+  outline: 1px solid var(--blue);
+}
+
+@media screen and (min-width: 800px) {
+  .banner-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #subscription-form {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .form-group {
+    width: 65%;
+  }
+
+  .form-control {
+    flex-grow: 1;
+  }
+
+  span.error {
+    text-align: left;
+    margin-left: 2rem;
+  }
+
+  .btn {
+    width: 30%;
+  }
+}
